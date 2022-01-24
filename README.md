@@ -1,6 +1,6 @@
 ---
-Title: Current weather
-Description: Display the current weather for a location based on the users input
+Title: Weather temperature
+Description: Display the weather temperature for a location based on the users input
 ---
 
 ## Tips for success
@@ -14,23 +14,34 @@ Description: Display the current weather for a location based on the users input
 
 ## Description
 
-Write some code to display the current weather for a location based on the users input.
+Write some code to display the weather temperature for a location based on the users input.
+
+You are encouraged to use any CSS framework of your choosing or plain html syntax in order to complete this challenge.
 
 ----------
 
-1. Create a form in order to receive a location input from the user. The location unit type can be one of the following (City|Region / State / Province|Country|Continent).
-2. The form can request a general location or a specific unit type.
-3. Call the following API with the users input
+1. Create a form in order to receive a location input from the user. The form should contain the following fields:
+
+   ```text
+    1. Input text requesting the date in the following format yyyy/mm/dd
+    2. Dropdown select field with the following cities
+       1. Atlanta
+       2. Seattle
+       3. Alabama
+       4. New York
+    ```
+
+2. Call the following API with the users input
 
    ```text
     GET https://www.metaweather.com/api/location/search/?query=<location>
     ```  
 
-4. Using the *woeid* property from the previous API response, call the following API to retrieve the current weather for the specified location
+3. Using the *woeid* property from the previous API response and the *date* input, call the following API to retrieve the temperature
 
    ```text
-    GET https://www.metaweather.com/api/location/<woeid>
+    GET https://www.metaweather.com/api/location/<woeid>/<date>
     ```
    
-5. Display the current temperature on the UI.
+4. Display the temperature on the UI.
 
