@@ -20,7 +20,17 @@ Write some code to display the current weather for a location based on the users
 
 1. Create a form in order to receive a location input from the user. The location unit type can be one of the following (City|Region / State / Province|Country|Continent).
 2. The form can request a general location or a specific unit type.
-3. Call the following API with the users input - GET https://www.metaweather.com/api/location/search/?query=<location>
-4. Using the *woeid* from the previous API response, call the following API to retrieve the current weather for the specified location - GET https://www.metaweather.com/api/location/<woeid>
+3. Call the following API with the users input
+
+   ```text
+    GET https://www.metaweather.com/api/location/search/?query=<location>
+    ```  
+
+4. Using the *woeid* property from the previous API response, call the following API to retrieve the current weather for the specified location
+
+   ```text
+    GET https://www.metaweather.com/api/location/<woeid>
+    ```
+   
 5. Display the current temperature on the UI.
 
