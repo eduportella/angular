@@ -1,27 +1,26 @@
-# Angular
+---
+title: Current weather
+description: Display the current weather for a location based on the users input
+---
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+## Tips for success
 
-## Development server
+* **Relax!** It’s okay if you get stuck. We're interested in how you think through problems with another person. Think out loud! Don't be afraid to ask questions - Your pairing partner is there to help.
+* **Ask questions**. We want to understand how you think about and approach problems.
+* **Write tests**. Quality is important to us, don’t forget to test your code as you
+  go along.
+* **Use the Internet!** We want to understand how you find and evaluate online information.
+* **Give feedback**. We don’t just want you to succeed, we want you to have fun!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+Write some code to display the current weather for a location based on the users input.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+----------
 
-## Build
+1. Create a form in order to receive a location input from the user. The location unit type can be one of the following (City|Region / State / Province|Country|Continent).
+2. The form can request a general location or a specific unit type.
+3. Call the following API with the users input - GET https://www.metaweather.com/api/location/search/?query=<location>
+4. Using the *woeid* from the previous API response, call the following API to retrieve the current weather for the specified location - GET https://www.metaweather.com/api/location/<woeid>
+5. Display the current temperature on the UI.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
