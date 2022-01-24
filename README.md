@@ -1,6 +1,6 @@
 ---
-title: Current weather
-description: Display the current weather for a location based on the users input
+Title: Current weather
+Description: Display the current weather for a location based on the users input
 ---
 
 ## Tips for success
