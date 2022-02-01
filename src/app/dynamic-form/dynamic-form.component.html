@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="example-form">
+  <div *ngFor="let field of fields">
+      <div [ngSwitch]="field.type">
+        <ng-container *ngSwitchCase="'text'">
+          <ng-container [ngTemplateOutlet]="input" [ngTemplateOutletContext]="{field: field}">
+          </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="'select'">
+          <ng-container [ngTemplateOutlet]="select" [ngTemplateOutletContext]="{options: field.options, field: field}">
+          </ng-container>
+        </ng-container>
+      </div>
+  </div>
+  <div class="content">
+    <button type="submit" [disabled]="!isValid" mat-raised-button color="primary">Submit</button>
+  </div>
+</form>
+<ng-template #select let-options='options' let-field='field'>
+  <mat-form-field style="min-width: 300px" [id]="field.key" appearance="fill">
+    <mat-label>{{field.label}}</mat-label>
+    <mat-select (selectionChange)="setFormControl(field.key, $event)" [errorStateMatcher]="matcher">
+      <mat-option *ngFor="let option of options" [value]="option.value" >
+        {{option.value}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.controls[field.key].hasError('required')">
+      {{field.label}} is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</ng-template>
+
+<ng-template #input let-field='field'>
+  <mat-form-field style="min-width: 300px" [id]="field.key" appearance="fill">
+    <mat-label>{{field.label}}</mat-label>
+    <input type="text" matInput [formControlName]="field.key" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="form.controls[field.key].hasError('required')">
+      {{field.label}} is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</ng-template>

@@ -16,32 +16,29 @@ Description: Display the weather temperature for a location based on the users i
 
 Write some code to display the weather temperature for a location based on the users input.
 
-You are encouraged to use any CSS framework of your choosing or plain html syntax in order to complete this challenge.
-
 ----------
 
-1. Create a form in order to receive a location input from the user. The form should contain the following fields:
+1. Run `npm install` in order to install the required packages
 
-   ```text
-    1. Input text requesting the date in the following format yyyy/mm/dd
-    2. Dropdown select field with the following cities
-       1. Atlanta
-       2. Seattle
-       3. Alabama
-       4. New York
-    ```
+2. Application architecture:
+   1. Angular router module is used for navigation
+   2. Reactive forms along with FormGroup directives are used in order to retrieve the users input
+   3. Angular material is used as the main CSS and UX components framework
 
-2. Call the following API with the users input
+3. Please take the time to familiarize yourself with the application and ask any questions you may have.
+Don't forget to write test cases as you go along.
+
+5. Create a service in order to call the following API with the users input as the location
 
    ```text
     GET https://www.metaweather.com/api/location/search/?query=<location>
     ```  
 
-3. Using the *woeid* property from the previous API response and the *date* input, call the following API to retrieve the temperature
+6. Using the *woeid* property from the previous API response, call the following API to retrieve the temperature
 
    ```text
-    GET https://www.metaweather.com/api/location/<woeid>/<date>
+    GET https://www.metaweather.com/api/location/<woeid>
     ```
    
-4. Display the temperature on the UI.
+7. Display the temperature on the UI
 
