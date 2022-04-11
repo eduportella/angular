@@ -1,1 +1,38 @@
 Welcome!
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2> Weather API</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <label>Please inform Date: </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <input type="date" [(ngModel)]="userInput.date" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <label>Please select city: </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ng-select [(ngModel)]="userInput.city" (change)="getLocationData()">
+        <ng-option value="Atlanta">Atlanta</ng-option>
+        <ng-option value="Seattle">Seattle</ng-option>
+        <ng-option value="Alabama">Alabama</ng-option>
+        <ng-option value="New York">New York</ng-option>
+      </ng-select>
+    </div>
+  </div>
+  <div class="row" *ngIf="temp !== '0'">
+    <div class="col-12">
+      <h1>Temperature: {{temp}}</h1>
+    </div>
+  </div>
+</div>
